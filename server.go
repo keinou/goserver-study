@@ -42,3 +42,25 @@ func forError() {
 		log.Fatal("err")
 	}
 }
+
+/* Usado para forcar problemas de segurança */
+func forSecurity() {
+	var (
+		ip   = "192.168.12.42"
+		port = 3333
+	)
+
+	log.Fatal(ip)
+	log.Fatal(port)
+}
+
+/* Usado para forcar melhoria de codigo */
+func forCodeSmell1() {
+	log.Fatal("Alguma coisa duplicada aqui!!!")
+	log.Fatal("Alguma coisa duplicada aqui!!!")
+	log.Fatal("Alguma coisa duplicada aqui!!!")
+}
+
+func forCodeSmell2() {
+	//FIXME
+}
