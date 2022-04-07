@@ -34,6 +34,8 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 
 /* Usado para forcar erro sonarcloud */
 func forError() {
+	var b = 1
+
 	if b == 0 {
 		log.Fatal("err")
 	} else {
