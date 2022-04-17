@@ -12,8 +12,8 @@ func main() {
 		fmt.Fprintf(w, "Welcome!")
 	})
 
-	fmt.Printf("Starting server at port 8080\n")
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	fmt.Printf("Starting server at port 80\n")
+	if err := http.ListenAndServe(":80", nil); err != nil {
 		log.Fatal(err)
 	}
 }
@@ -44,23 +44,23 @@ func forError() {
 }
 
 /* Usado para forcar problemas de segurança */
-func forSecurity() {
-	var (
-		ip   = "192.168.12.42"
-		port = 3333
-	)
+// func forSecurity() {
+// 	var (
+// 		ip   = "192.168.12.42"
+// 		port = 3333
+// 	)
 
-	log.Fatal(ip)
-	log.Fatal(port)
-}
+// 	log.Fatal(ip)
+// 	log.Fatal(port)
+// }
 
-/* Usado para forcar melhoria de codigo */
-func forCodeSmell1() {
-	log.Fatal("Alguma coisa duplicada aqui!!!")
-	log.Fatal("Alguma coisa duplicada aqui!!!")
-	log.Fatal("Alguma coisa duplicada aqui!!!")
-}
+// /* Usado para forcar melhoria de codigo */
+// func forCodeSmell1() {
+// 	log.Fatal("Alguma coisa duplicada aqui!!!")
+// 	log.Fatal("Alguma coisa duplicada aqui!!!")
+// 	log.Fatal("Alguma coisa duplicada aqui!!!")
+// }
 
-func forCodeSmell2() {
-	//FIXME
-}
+// func forCodeSmell2() {
+// 	//FIXME
+// }

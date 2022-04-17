@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: goserver-study
+spec:
+  selector:
+    matchLabels:
+      app: goserver-study
+  template:
+    metadata:
+      labels:
+        app: goserver-study
+    spec:
+      containers:
+      - name: goserver-study
+        image: nginx
+        ports:
+        - containerPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: goserver-study
+  annotations:
+    oci.oraclecloud.com/load-balancer-type: "lb"
+    service.beta.kubernetes.io/oci-load-balancer-shape: flexible
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-min: "1"
+    service.beta.kubernetes.io/oci-load-balancer-shape-flex-max: "10"
+spec:
+  selector:
+    app: goserver-study
+  type: LoadBalancer
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
